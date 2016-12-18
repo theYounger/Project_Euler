@@ -1,36 +1,34 @@
-function checkLargestPrime( num ) {
-  function checkFactor( prime, count ) {
-    if( count >= prime ) {
-      largestPrimeFactor = prime;
-      return found = true;
-    }
-
-    if( prime % count === 0 ) {
-      return;
-    }
-
-    checkFactor( prime, count += 2 );
+console.time();
+function checkIfPrime( prime, count ) {
+  if( count >= prime ) {
+    largestPrimeFactor = prime;
   }
 
-  var largestPrimeFactor;
-  var primeSquareRoot;
-  var forStart = Math.ceil( Math.sqrt( num ) );
-  var found = false;
-
-  if( forStart % 2 === 0 ) {
-    forStart--;
+  if( prime % count === 0 ) {
+    return;
   }
-  console.log(forStart, "forStart");
 
-  for( var i = forStart; !found; i -= 2 ) {
-    console.log(i, "i");
+  checkIfPrime( prime, count+=2 );
+}
+
+function findLargestPrime( num ) {
+  var numSqrt = Math.ceil( Math.sqrt( num ) );
+
+  if( numSqrt % 2 === 0 ) {
+    numSqrt--;
+  }
+
+  for( var i = numSqrt; !largestPrimeFactor; i-=2 ) {
     if( num % i === 0 ) {
-      checkFactor( i, 3 );
+      checkIfPrime( i, 3 );
     }
   }
-
+  console.timeEnd();
   return largestPrimeFactor;
 }
+
+var largestPrimeFactor;
+
 console.log(
-  checkLargestPrime( 3 )
+  findLargestPrime( 600851475143 )
 );
