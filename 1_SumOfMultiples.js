@@ -8,4 +8,4 @@ function multipleOf( factor, count ) {
   }
 }
 
-return multipleOf( 3, 1 ) + multipleOf( 5, 1 ) - multipleOf(15, 1);
+return multipleOf( 3, 1 ) + multipleOf( 5, 1 ) - multipleOf( 15, 1 );
