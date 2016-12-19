@@ -3,6 +3,7 @@ My solutions for the problems presented by Project Euler @ https://projecteuler.
 
 ### Problem 3: Find the Largest Prime Factor
 https://projecteuler.net/problem=3
+[My full solution](https://github.com/theYounger/Project_Euler/blob/master/3_LargestPrimeFactor.js)
 ####The prime factors of 13195 are 5, 7, 13 and 29.
 
 ####What is the largest prime factor of the number 600851475143 ?
@@ -16,7 +17,6 @@ First step was to break down the challenge into a manageable size.
 Where *num* is equal to 600,851,475,143. By finding the [square root](http://mathworld.wolfram.com/SquareRoot.html) of *num* I am able to find its largest possible factor. This is important. Instead of looping through 600,851,475,143 in search of prime factors, I can loop through its rounded square root, 775,147.
 
 The second step was to realize that instead of looping from 0 to whatever terminus in the typical fashion, it's better to start at the square root and work backwards, since we are in fact looking for the largest prime factor. This would cut down the size of the task down enormously.
-
 ```javascript
 for( var i = numSqrt; !largestPrimeFactor; i-=2 ) {
   if( num % i === 0 ) {
@@ -38,5 +38,4 @@ function checkIfPrime( prime, count ) {
   checkIfPrime( prime, count+=2 );
 }
 ```
-
 If the number is a prime number it is saved to state. The recursive function is broken out of. And the prime number returned, thereby solving Project Euler's #3 problem.
