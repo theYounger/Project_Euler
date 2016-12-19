@@ -13,7 +13,7 @@ First step was to break down the challenge into a manageable size.
 ```javascript
  var numSqrt = Math.ceil( Math.sqrt( num ) );
 ```
-Where *num* is equal to 600851475143. By finding the square root of *num* I am able to find its largest possible factor. This is important. Instead of looping through 600851475143 in search of prime factors, I can loop through its rounded square root, 775147.
+Where *num* is equal to 600851475143. By finding the [square root](http://mathworld.wolfram.com/SquareRoot.html) of *num* I am able to find its largest possible factor. This is important. Instead of looping through 600851475143 in search of prime factors, I can loop through its rounded square root, 775147.
 
 The second step was to realize that instead of looping from 0 to whatever terminus in the typical fashion, it's better to start at the square root and work backwards, since we are in fact looking for the largest prime factor. This would cut down the size of the task down enormously.
 
