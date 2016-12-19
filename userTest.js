@@ -1,16 +1,7 @@
 console.time();
-var n = 600851475143;
-for(var i = Math.floor(Math.sqrt(n)); i > 1; i--)
-  if(n%i==0)
-  {
-    var prime = true;
-    for(var j = Math.floor(Math.sqrt(i)); j > 1; j--)
-      if(i%j==0)
-        prime = false;
-    if(prime)
-    {
-      console.log(i);
-  console.timeEnd();
-      break;
-    }
-  }
+var palindrome = 0;
+for(var i=100; i<=999; i++)
+  for(var j=100; j<=999; j++)
+    if((''+i*j).split('').reverse().join('')==(''+i*j))
+      palindrome = Math.max(palindrome,i*j);
+console.timeEnd();
