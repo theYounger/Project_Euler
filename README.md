@@ -24,7 +24,7 @@ for( var i = numSqrt; !largestPrimeFactor; i-=2 ) {
   }
 }
 ```
-The function *checkIfPrime* is a recursive function whose task is to determine if said iteration of the for loop is a prime number. *checkIfPrime* looks like this:
+The function *checkIfPrime* is a [recursive function](http://www.integralist.co.uk/posts/js-recursion.html) whose task is to determine if said iteration of the for loop is a prime number. *checkIfPrime* looks like this:
 ```javascript
 function checkIfPrime( prime, count ) {
   if( count >= prime ) {
