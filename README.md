@@ -2,7 +2,7 @@
 My solutions for the problems presented by Project Euler @ https://projecteuler.net/
 
 ### Problem 3: Find the Largest Prime Factor
-[The Original Problem](https://projecteuler.net/problem=3) | [My full solution](https://github.com/theYounger/Project_Euler/blob/master/3_LargestPrimeFactor.js)
+[The original problem](https://projecteuler.net/problem=3) | [My full solution](https://github.com/theYounger/Project_Euler/blob/master/3_LargestPrimeFactor.js)
 ####The prime factors of 13195 are 5, 7, 13 and 29.
 
 ####What is the largest prime factor of the number 600851475143 ?
