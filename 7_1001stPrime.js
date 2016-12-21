@@ -14,4 +14,3 @@ for(let i = 3; count < 10001; i+=2) {
 }
 
 return primeArray[primeArray.length - 1];
-
