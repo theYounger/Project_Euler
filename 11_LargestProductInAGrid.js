@@ -4,7 +4,7 @@ function firstDiagonal(row, element) {
 }
 
 function secondDiagonal(row, element) {
-  const product = matrix[row-3][element-3] * matrix[row-2][element-2] * matrix[row-1][element-1] * matrix[row][element];
+  const product = matrix[row][element] * matrix[row-1][element+1] * matrix[row-2][element+2] * matrix[row-3][element+3] * matrix[row-4][element+4];
   productArray.push(product);
 }
 
@@ -39,12 +39,17 @@ for(let i = 0; i < 20; i++) {
 for(let i = 4; i < 20; i++) {
   for(let j = 4; j < 20; j++) {
     firstDiagonal(i, j);
+  }
+}
+
+for(let i = 4; i < 20; i++) {
+  for(let j = 0; j < 16; j++) {
     secondDiagonal(i, j);
   }
 }
 
 //cross
-for(let i = 0; i< 17; i++) {
+for(let i = 0; i < 16; i++) {
   for(let j = 0; j < 20; j++) {
     vertical(i, j);
   }
@@ -56,6 +61,8 @@ for(let i = 0; i< 20; i++) {
   }
 }
 
-const max = Math.max.apply(productArray, null);
+console.log(productArray);
+
+const max = Math.max.apply(null, productArray);
 
 console.log(max, "max");
