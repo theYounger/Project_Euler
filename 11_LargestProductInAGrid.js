@@ -9,25 +9,13 @@ const gridArr = grid.split(" ").map(function convertToNum(element) {
 
 const matrixObj = {};
 
-for(let i = 6; i < gridArr.length; i++) {
+for(let i = 0; i < 20; i++) {
   const arr = [];
-  for(let j = 0; j < 20; j++) {
-    arr.push(gridArr[j])
+  const row = i * 20 - 1;
+  for(let j = 0; j < 21; j++) {
+    arr.push(gridArr[row + j]);
   }
+  matrixObj[(i + 1).toString()] = arr;
 }
 
-function simplifyGrid(element, index, array) {
-  const indexStr = index.toString();
-  const firstDigit = indexStr[0];
-  const lastDigit = indexStr[indexStr.length - 1];
-
-  if(index > 59 && Number(firstDigit) % 2 === 0 && !(lastDigit == "9" || Number(lastDigit) < 3)) {
-    return Number(element);
-  }
-}
-
-// .map(simplifyGrid).filter(function removeUndefined(element) {
-//   return element;
-// });
-
-// console.log(matrixObj);
+console.log(matrixObj);
