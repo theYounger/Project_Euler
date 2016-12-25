@@ -1,10 +1,10 @@
 function firstDiagonal(row, element) {
-    const product = matrix[row][element] * matrix[row-1][element-1] * matrix[row-2][element-2] * matrix[row-3][element-3] * matrix[row-4][element-4];
+    const product = matrix[row][element] * matrix[row-1][element-1] * matrix[row-2][element-2] * matrix[row-3][element-3];
     productArray.push(product);
 }
 
 function secondDiagonal(row, element) {
-  const product = matrix[row][element] * matrix[row-1][element+1] * matrix[row-2][element+2] * matrix[row-3][element+3] * matrix[row-4][element+4];
+  const product = matrix[row][element] * matrix[row-1][element+1] * matrix[row-2][element+2] * matrix[row-3][element+3];
   productArray.push(product);
 }
 
@@ -35,28 +35,30 @@ for(let i = 0; i < 20; i++) {
   matrix.push(rowArr);
 }
 
+console.log(matrix.length, "matrix length");
+
 //diagonals
-for(let i = 4; i < 20; i++) {
-  for(let j = 4; j < 20; j++) {
+for(let i = 3; i < matrix.length; i++) {
+  for(let j = 3; j < matrix.length; j++) {
     firstDiagonal(i, j);
   }
 }
 
-for(let i = 4; i < 20; i++) {
-  for(let j = 0; j < 16; j++) {
+for(let i = 3; i < matrix.length; i++) {
+  for(let j = 0; j < matrix.length - 3; j++) {
     secondDiagonal(i, j);
   }
 }
 
 //cross
-for(let i = 0; i < 16; i++) {
-  for(let j = 0; j < 20; j++) {
+for(let i = 0; i < matrix.length - 3; i++) {
+  for(let j = 0; j < matrix.length; j++) {
     vertical(i, j);
   }
 }
 
-for(let i = 0; i< 20; i++) {
-  for(let j = 0; j < 17; j++) {
+for(let i = 0; i < matrix.length; i++) {
+  for(let j = 0; j < matrix.length - 3; j++) {
     horizontal(i, j);
   }
 }
